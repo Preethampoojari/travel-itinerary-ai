@@ -100,53 +100,6 @@ Users can:
 
 ---
 
-# 🖼️ Application Screenshots
-
----
-
-## 🏠 Home Page
-
-- Modern landing page
-- Feature highlights
-- CTA-based navigation
-
-<img width="100%" src="YOUR_SCREENSHOT_LINK_HOMEPAGE" />
-
----
-
-## 🔐 Login Page
-
-<img width="100%" src="YOUR_SCREENSHOT_LINK_LOGIN" />
-
----
-
-## 📝 Signup Page
-
-<img width="100%" src="YOUR_SCREENSHOT_LINK_SIGNUP" />
-
----
-
-## 📂 Dashboard Upload System
-
-- Drag & Drop Upload
-- AI itinerary generation
-
-<img width="100%" src="YOUR_SCREENSHOT_LINK_DASHBOARD" />
-
----
-
-## 🗂️ Trip History
-
-<img width="100%" src="YOUR_SCREENSHOT_LINK_HISTORY" />
-
----
-
-## ✨ Generated AI Itinerary
-
-<img width="100%" src="YOUR_SCREENSHOT_LINK_ITINERARY" />
-
----
-
 # 🛠️ Tech Stack
 
 ## Frontend
