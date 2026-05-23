@@ -27,7 +27,7 @@ app.use(
 );
 
 // Database connection
-connectDB();
+await connectDB();
 
 // routes
 app.use("/user", userRoute);
