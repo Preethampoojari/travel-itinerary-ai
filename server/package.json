@@ -4,7 +4,8 @@
   "description": "Full Stack Travel Itinerary AI App",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "Preetham Poojari",
