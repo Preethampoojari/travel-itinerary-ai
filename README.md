@@ -12,7 +12,7 @@ Generate intelligent travel itineraries automatically by uploading flight ticket
 [https://travel-itinerary-ai-orcin.vercel.app](https://travel-itinerary-ai-orcin.vercel.app)
 
 📂 **GitHub Repository:**  
-[YOUR_GITHUB_REPO_LINK]
+https://github.com/Preethampoojari/travel-itinerary-ai
 
 </div>
 
