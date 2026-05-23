@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 function Home() {
-  const token = localStorage.getItem("jwt");
+  const { isAuthenticated } = useAuth();
   return (
     <section className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 py-20">
@@ -24,7 +25,7 @@ function Home() {
               Get Started
             </Link>
 
-            {!token && (
+            {!isAuthenticated && (
               <Link
                 to="/login"
                 className="border border-gray-300 px-8 py-4 rounded-xl text-lg font-semibold"

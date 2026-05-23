@@ -3,18 +3,19 @@ import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { logoutUser } from "../services/authService";
 import toast from "react-hot-toast";
+import useAuth from "../hooks/useAuth";
 
 function Navbar() {
-  const token = localStorage.getItem("jwt");
-
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const { isAuthenticated, logout } = useAuth();
 
   const handleLogout = async () => {
     try {
       await logoutUser();
       toast.success("User logged out successfully");
 
-      localStorage.removeItem("jwt");
+      logout();
       window.location.reload();
     } catch (error) {
       console.log(error);
@@ -39,7 +40,7 @@ function Navbar() {
             Home
           </Link>
 
-          {token && (
+          {isAuthenticated && (
             <>
               <Link
                 to="/dashboard"
@@ -57,7 +58,7 @@ function Navbar() {
             </>
           )}
 
-          {token ? (
+          {isAuthenticated ? (
             <button
               onClick={handleLogout}
               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"
@@ -91,7 +92,7 @@ function Navbar() {
             Home
           </Link>
 
-          {token && (
+          {isAuthenticated && (
             <>
               <Link
                 to="/dashboard"
@@ -111,7 +112,7 @@ function Navbar() {
             </>
           )}
 
-          {token ? (
+          {isAuthenticated ? (
             <button
               onClick={handleLogout}
               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg transition"

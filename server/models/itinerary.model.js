@@ -10,6 +10,7 @@ const itinerarySchema = new mongoose.Schema(
 
     destination: {
       type: String,
+      trim: true,
       // required: true,
     },
 
@@ -34,6 +35,7 @@ const itinerarySchema = new mongoose.Schema(
 
     notes: {
       type: String,
+      trim: true,
     },
 
     uploadedDocument: {
@@ -47,6 +49,7 @@ const itinerarySchema = new mongoose.Schema(
     generatedItinerary: {
       type: String,
     },
+
     isPublic: {
       type: Boolean,
       default: false,
@@ -56,9 +59,16 @@ const itinerarySchema = new mongoose.Schema(
       type: String,
       default: null,
     },
+
+    transportType: {
+      type: String,
+    },
   },
   { timestamps: true },
 );
+
+// INDEXING FOR PERFORMANCE
+itinerarySchema.index({ user: 1, createdAt: -1 });
 
 const Itinerary = mongoose.model("Itinerary", itinerarySchema);
 

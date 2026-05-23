@@ -7,6 +7,7 @@ import itineraryRoute from "./routes/itinerary.route.js";
 import shareRoutes from "./routes/share.route.js";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
+import compression from "compression";
 
 const app = express();
 dotenv.config();
@@ -15,6 +16,7 @@ const PORT = process.env.PORT || 5001;
 
 // middlewares
 app.use(express.json());
+app.use(compression());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(

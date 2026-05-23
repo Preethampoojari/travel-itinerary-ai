@@ -12,30 +12,41 @@ export const createItinerary = async (req, res) => {
   try {
     const file = req.file;
 
-    if (!file) {
-      return res.status(400).json({
-        success: false,
-        message: "No file uploaded",
-      });
-    }
+    const {
+      destination,
+      startDate,
+      endDate,
+      travelers,
+      budget,
+      transportType,
+      notes,
+    } = req.body;
 
-    // upload to cloudinary
-    const uploadedFile = await uploadToCloudinary(
-      file.buffer,
-      "travel-documents",
-    );
-
-    // extract pdf text
     let extractedText = "";
+    let uploadedFile = null;
 
-    if (file.mimetype === "application/pdf") {
-      extractedText = await extractTextFromPdf(file.buffer);
+    if (file) {
+      uploadedFile = await uploadToCloudinary(file.buffer, "travel-documents");
+
+      if (file.mimetype === "application/pdf") {
+        extractedText = await extractTextFromPdf(file.buffer);
+      } else {
+        extractedText = await extractTextFromImage(file.buffer, file.mimetype);
+      }
     } else {
-      extractedText = await extractTextFromImage(file.buffer, file.mimetype);
+      extractedText = `
+Destination: ${destination}
+Start Date: ${startDate}
+End Date: ${endDate}
+Travelers: ${travelers}
+Budget: ${budget}
+Transport Type: ${transportType}
+Notes: ${notes}
+  `;
     }
 
     // image handling later
-    if (!extractedText.trim()) {
+    if (!extractedText.trim() && !destination) {
       return res.status(400).json({
         success: false,
         message: "Unable to extract text from PDF",
@@ -48,7 +59,13 @@ export const createItinerary = async (req, res) => {
     // save mongodb
     const itinerary = await Itinerary.create({
       user: req.user.id,
-      uploadedDocument: uploadedFile.secure_url,
+      uploadedDocument: uploadedFile?.secure_url || "",
+      destination,
+      startDate,
+      endDate,
+      travelers,
+      budget,
+      notes,
       extractedText,
       generatedItinerary,
     });

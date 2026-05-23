@@ -91,6 +91,7 @@ function SingleItinerary() {
           <img
             src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
             alt="travel"
+            loading="lazy"
             className="w-full h-80 object-cover"
           />
 

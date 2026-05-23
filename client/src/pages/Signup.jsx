@@ -22,7 +22,6 @@ function Signup() {
       });
 
       toast.success(data.message || "User registered successfully");
-      localStorage.setItem("jwt", data.token);
       navigateTo("/login");
       setUserName("");
       setEmail("");

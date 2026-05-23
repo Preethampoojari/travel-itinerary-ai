@@ -20,3 +20,9 @@ export const getSingleItinerary = async (id) => {
 
   return response.data;
 };
+
+export const deleteItinerary = async (id) => {
+  const response = await API.delete(`/itinerary/delete/${id}`);
+
+  return response.data;
+};

@@ -2,10 +2,14 @@ import { loginUser } from "../services/authService";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+  const { login } = useAuth();
 
   const navigateTo = useNavigate();
 
@@ -21,7 +25,7 @@ function Login() {
       });
 
       toast.success(data.message || "User loggedin successfully");
-      localStorage.setItem("jwt", data.token);
+      login();
       navigateTo("/");
       setEmail("");
       setPassword("");

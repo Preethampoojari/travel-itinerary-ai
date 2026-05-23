@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { getHistory } from "../services/itineraryService";
+import { getHistory, deleteItinerary } from "../services/itineraryService";
 import { useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 
@@ -28,6 +28,26 @@ function History() {
   useEffect(() => {
     fetchHistory();
   }, []);
+
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this itinerary?",
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      await deleteItinerary(id);
+
+      toast.success("Itinerary deleted successfully");
+
+      setTrips((prev) => prev.filter((trip) => trip._id !== id));
+    } catch (error) {
+      console.log(error);
+
+      toast.error("Failed to delete itinerary");
+    }
+  };
 
   if (loading) {
     return (
@@ -60,6 +80,7 @@ function History() {
                 <img
                   src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
                   alt="travel"
+                  loading="lazy"
                   className="h-52 w-full object-cover"
                 />
 
@@ -74,12 +95,21 @@ function History() {
                     </ReactMarkdown>
                   </div>
 
-                  <button
-                    onClick={() => navigate(`/itinerary/${trip._id}`)}
-                    className="mt-6 w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition"
-                  >
-                    View Itinerary
-                  </button>
+                  <div className="mt-6 flex gap-3">
+                    <button
+                      onClick={() => navigate(`/itinerary/${trip._id}`)}
+                      className="flex-1 bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-xl font-semibold transition"
+                    >
+                      View Itinerary
+                    </button>
+
+                    <button
+                      onClick={() => handleDelete(trip._id)}
+                      className="bg-red-500 hover:bg-red-600 text-white px-4 rounded-xl font-semibold transition"
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}

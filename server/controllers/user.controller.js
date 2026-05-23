@@ -38,7 +38,7 @@ export const register = async (req, res) => {
     const savedUser = await newUser.save();
 
     if (savedUser) {
-      const token = await generateTokenAndSaveInCookies(newUser._id, res);
+      // const token = await generateTokenAndSaveInCookies(newUser._id, res);
       res.status(201).json({
         message: "User registered successfully",
         user: {
@@ -93,5 +93,21 @@ export const logout = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.status(500).json({ message: "Error logging out user" });
+  }
+};
+
+export const getMe = async (req, res) => {
+  try {
+    res.status(200).json({
+      user: {
+        _id: req.user._id,
+        username: req.user.username,
+        email: req.user.email,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error fetching user",
+    });
   }
 };

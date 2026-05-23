@@ -10,9 +10,33 @@ function UploadBox({ setItinerary }) {
 
   const [dragActive, setDragActive] = useState(false);
 
+  // NEW FORM STATE
+  const [formDataState, setFormDataState] = useState({
+    destination: "",
+    startDate: "",
+    endDate: "",
+    travelers: 1,
+    budget: "",
+    transportType: "",
+    notes: "",
+  });
+
+  // HANDLE INPUT CHANGE
+  const handleChange = (e) => {
+    setFormDataState({
+      ...formDataState,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleGenerate = async () => {
-    if (!file) {
-      return toast.error("Please upload a file");
+    // Allow either file OR manual details
+    const hasManualData = Object.values(formDataState).some(
+      (value) => value !== "" && value !== 1,
+    );
+
+    if (!file && !hasManualData) {
+      return toast.error("Please upload a file or enter travel details");
     }
 
     try {
@@ -20,7 +44,15 @@ function UploadBox({ setItinerary }) {
 
       const formData = new FormData();
 
-      formData.append("document", file);
+      // OPTIONAL FILE
+      if (file) {
+        formData.append("document", file);
+      }
+
+      // MANUAL FORM DATA
+      Object.keys(formDataState).forEach((key) => {
+        formData.append(key, formDataState[key]);
+      });
 
       const data = await generateItinerary(formData);
 
@@ -128,6 +160,79 @@ function UploadBox({ setItinerary }) {
           <CheckCircle2 size={32} className="text-green-500" />
         </div>
       )}
+
+      {/* MANUAL FORM */}
+
+      <div className="mt-6 space-y-4">
+        <h3 className="text-lg font-semibold">
+          Enter Details Manually (Optional)
+        </h3>
+
+        <input
+          type="text"
+          name="destination"
+          placeholder="Destination"
+          value={formDataState.destination}
+          onChange={handleChange}
+          className="w-full border p-3 rounded-lg"
+        />
+
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="date"
+            name="startDate"
+            value={formDataState.startDate}
+            onChange={handleChange}
+            className="border p-3 rounded-lg"
+          />
+
+          <input
+            type="date"
+            name="endDate"
+            value={formDataState.endDate}
+            onChange={handleChange}
+            className="border p-3 rounded-lg"
+          />
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <input
+            type="number"
+            name="travelers"
+            placeholder="Travelers"
+            value={formDataState.travelers}
+            onChange={handleChange}
+            className="border p-3 rounded-lg"
+          />
+
+          <input
+            type="number"
+            name="budget"
+            placeholder="Budget"
+            value={formDataState.budget}
+            onChange={handleChange}
+            className="border p-3 rounded-lg"
+          />
+        </div>
+
+        <input
+          type="text"
+          name="transportType"
+          placeholder="Transport Type (Flight, Train...)"
+          value={formDataState.transportType}
+          onChange={handleChange}
+          className="w-full border p-3 rounded-lg"
+        />
+
+        <textarea
+          name="notes"
+          placeholder="Additional Notes"
+          value={formDataState.notes}
+          onChange={handleChange}
+          rows={4}
+          className="w-full border p-3 rounded-lg"
+        />
+      </div>
 
       {/* Button */}
 
