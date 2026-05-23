@@ -348,9 +348,8 @@ Full Stack Developer (MERN)
 
 # 📬 Contact
 
-📧 Email: YOUR_EMAIL  
-💼 LinkedIn: YOUR_LINKEDIN  
-🌐 Portfolio: YOUR_PORTFOLIO
+📧 Email: preethampoojari146@gmail.com  
+💼 LinkedIn: https://www.linkedin.com/in/preethampoojari/
 
 ---
 
