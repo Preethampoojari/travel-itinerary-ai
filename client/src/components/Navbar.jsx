@@ -16,7 +16,6 @@ function Navbar() {
       toast.success("User logged out successfully");
 
       logout();
-      window.location.reload();
     } catch (error) {
       console.log(error);
       toast.error("Error logging out");
