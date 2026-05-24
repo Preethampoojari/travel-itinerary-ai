@@ -1,102 +1,238 @@
-# ✈️ TravelAI — AI Powered Travel Itinerary Generator
-
 <div align="center">
 
-### 🚀 MERN + AI Based Smart Travel Planning Application
+# ✈️ TravelAI — AI Powered Travel Itinerary Generator
 
-Generate intelligent travel itineraries automatically by uploading flight tickets, hotel bookings, and travel documents.
+### Smart MERN + AI Travel Planning Application
 
----
+Generate complete AI-powered travel itineraries from flight tickets, hotel bookings, PDFs, and travel images using **Gemini AI**.
 
-🌐 **Live Demo:**  
-[https://travel-itinerary-ai-orcin.vercel.app](https://travel-itinerary-ai-orcin.vercel.app)
+<br/>
 
-📂 **GitHub Repository:**  
-https://github.com/Preethampoojari/travel-itinerary-ai
+[![React](https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge&logo=react)]()
+[![Node.js](https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=node.js)]()
+[![MongoDB](https://img.shields.io/badge/Database-MongoDB-darkgreen?style=for-the-badge&logo=mongodb)]()
+[![Express](https://img.shields.io/badge/Server-Express-black?style=for-the-badge&logo=express)]()
+[![Gemini AI](https://img.shields.io/badge/AI-Gemini-purple?style=for-the-badge&logo=google)]()
+
+<br/>
+
+### 🚀 Live Demo
+
+🔗 **Frontend:**  
+https://travel-itinerary-ai-orcin.vercel.app
+
+🔗 **Backend:**  
+https://travel-itinerary-ai-fxcs.onrender.com
 
 </div>
 
 ---
 
-# 📌 Project Overview
+# 🌍 Overview
 
-TravelAI is a full-stack MERN application that allows users to upload travel-related booking documents and automatically generate AI-powered travel itineraries.
+TravelAI is a full-stack MERN + AI application that automatically generates intelligent travel itineraries from uploaded travel documents.
 
-The application extracts travel information from uploaded files and creates structured day-wise travel plans using AI integration.
-
-This project was built as part of a **Junior Full Stack Developer (MERN + AI)** assignment.
-
----
-
-# ✨ Features
-
-## 🔐 Authentication System
-- User Signup & Login
-- JWT-based Authentication
-- Secure Protected Routes
-- Cookie-based Session Handling
-- Persistent Login State
-
----
-
-## 📄 Travel Document Upload
 Users can upload:
+
 - Flight Tickets
 - Hotel Bookings
-- Travel Documents
-- Images (JPG, PNG)
+- Travel PDFs
+- Travel Images
+
+or manually enter travel details through the dashboard form.
+
+The application extracts travel information using AI + OCR processing and generates a structured day-wise itinerary with travel suggestions, budgeting, transport planning, and recommendations.
+
+This project was developed as part of a **Junior Full Stack Developer (MERN + AI)** assignment and later improved with multiple production-level enhancements and optimizations.
+
+---
+
+# ✨ Core Features
+
+# 🔐 Authentication System
+
+✅ JWT Authentication  
+✅ User Signup & Login  
+✅ Protected Routes  
+✅ Persistent Login State  
+✅ Context API Authentication  
+✅ Secure Logout Handling  
+✅ Cookie-based Session Management  
+✅ Protected Dashboard Access
+
+---
+
+# 🤖 AI-Powered Itinerary Generation
+
+✅ Gemini AI Integration  
+✅ AI-generated Travel Plans  
+✅ Day-wise Itinerary Creation  
+✅ Budget Recommendations  
+✅ Travel Suggestions  
+✅ Destination Planning  
+✅ Smart Travel Formatting  
+✅ Structured Markdown Response
+
+---
+
+# 📄 Smart Document Processing
+
+Users can upload:
+
+✅ Flight Tickets  
+✅ Hotel Bookings  
+✅ Travel Documents  
+✅ PDFs  
+✅ JPG Images  
+✅ PNG Images
+
+The system supports:
+
+✅ PDF Text Extraction  
+✅ OCR-based Image Text Extraction  
+✅ Gemini Vision Processing  
+✅ Drag & Drop Uploads  
+✅ Manual Form Fallback
+
+---
+
+# 🧠 Dashboard Workflow
+
+The dashboard supports **two ways** to generate itineraries:
+
+### 1️⃣ Upload Travel Documents
+
+Users can upload:
+
+- Flight Tickets
+- Hotel Bookings
+- Travel Images
 - PDFs
 
-### Supported File Types
-- PDF
-- JPG
-- PNG
+The application automatically extracts travel information and generates an itinerary.
+
+### 2️⃣ Manual Entry (Optional)
+
+Users can manually enter:
+
+- Destination
+- Dates
+- Budget
+- Travelers Count
+- Transport Type
+- Additional Notes
+
+This makes document upload optional.
 
 ---
 
-## 🤖 AI-Powered Itinerary Generation
-Automatically generates:
-- Destination Details
-- Travel Dates
-- Flight Information
-- Day-wise Travel Plan
-- Budget Estimation
-- Travel Tips
-- Local Recommendations
+# 🗂️ Itinerary Features
 
-Powered using:
-- Gemini AI API
+✅ Generate AI Itinerary  
+✅ Single Itinerary View  
+✅ Public Shareable Links  
+✅ History Page  
+✅ Saved Itineraries  
+✅ Delete Itinerary  
+✅ Dynamic Itinerary Rendering  
+✅ Smart Markdown Formatting
 
 ---
 
-## 🗂️ Trip History Management
-- Stores generated itineraries in MongoDB
-- Users can revisit previous trips
-- Persistent itinerary history
+# 📥 Export & Sharing Features
+
+✅ Download Itinerary as PDF  
+✅ Download Itinerary as TXT  
+✅ Public Itinerary Sharing  
+✅ Shareable Public Links
 
 ---
 
-## 📤 Sharing Functionality
-- Share generated itineraries
-- Public itinerary links
-- Easy collaboration and trip sharing
+# 🎨 Frontend Features
+
+✅ Fully Responsive UI  
+✅ Mobile Responsive Design  
+✅ Modern Dashboard Layout  
+✅ Responsive Navbar  
+✅ Toast Notifications  
+✅ Loading States  
+✅ Smooth User Experience  
+✅ Lazy-loaded Images  
+✅ React Code Splitting  
+✅ React.lazy + Suspense Optimization
 
 ---
 
-## 📥 Export Features
-Users can:
-- Download itinerary as PDF
-- Download itinerary as TXT
-- Share itinerary publicly
+# ⚙️ Backend Features
+
+✅ REST API Architecture  
+✅ Express.js Server  
+✅ MongoDB Integration  
+✅ Mongoose Models  
+✅ Protected APIs  
+✅ Middleware-based Architecture  
+✅ Compression Middleware  
+✅ MongoDB Indexing  
+✅ Secure API Handling
 
 ---
 
-## 🎨 Modern Responsive UI
-- Fully responsive design
-- Clean modern interface
-- Mobile-friendly layouts
-- Dashboard-based workflow
-- Smooth user experience
+# ☁️ Cloud & Deployment
+
+✅ Frontend Deployment (Vercel)  
+✅ Backend Deployment (Render)  
+✅ Cloudinary File Uploads  
+✅ Environment Variables Setup  
+✅ Production-ready Deployment Structure
+
+---
+
+# 🚀 Performance Optimizations
+
+✅ Lazy Loading  
+✅ React Code Splitting  
+✅ Compression Middleware  
+✅ MongoDB Indexing  
+✅ Optimized API Calls  
+✅ Efficient Rendering  
+✅ Protected Route Persistence
+
+---
+
+## ✨ Features
+
+- 🔐 JWT Authentication & Protected Routes
+- 📄 Upload Travel Documents (PDF/Image)
+- 🤖 AI-powered Itinerary Generation
+- 🧠 OCR-based Text Extraction
+- ☁️ Cloudinary File Upload Integration
+- 📚 Trip History Management
+- 🔗 Public Itinerary Sharing
+- 📥 PDF & TXT Download Feature
+- 📱 Fully Responsive UI
+- 🚀 Production Deployment Ready
+
+---
+
+# 🧭 Application Flow
+
+```text
+User Authentication
+        ↓
+Dashboard Access
+        ↓
+Upload Documents OR Fill Manual Form
+        ↓
+PDF/Image/OCR Processing
+        ↓
+Gemini AI Processing
+        ↓
+Structured Itinerary Generation
+        ↓
+Save to MongoDB
+        ↓
+View / Share / Download Itinerary
+```
 
 ---
 
@@ -108,6 +244,7 @@ Users can:
 - React Router DOM
 - Axios
 - Tailwind CSS
+- Context API
 
 ---
 
@@ -127,8 +264,10 @@ Users can:
 
 ---
 
-## AI Integration
+## AI & Processing
 - Gemini AI API
+- Gemini Vision API
+- OCR-based Extraction
 
 ---
 
@@ -138,26 +277,18 @@ Users can:
 
 ---
 
-## Deployment
-### Frontend
-- Vercel
+# 📁 Project Structure
 
-### Backend
-- Render
-
----
-
-# 📁 Folder Structure
-
-```bash
+```text
 TravelAI/
 │
 ├── client/
 │   ├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── context/
-│   └── utils/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── utils/
+│   │   └── routes/
 │
 ├── server/
 │   ├── controllers/
@@ -172,26 +303,26 @@ TravelAI/
 
 ---
 
-# ⚙️ Installation & Setup
+# ⚡ Installation & Setup
 
 ## 1️⃣ Clone Repository
 
 ```bash
-git clone YOUR_GITHUB_REPO_LINK
+git clone https://github.com/Preethampoojari/travel-itinerary-ai.git
 ```
 
 ---
 
-## 2️⃣ Install Dependencies
-
-### Frontend
+## 2️⃣ Install Frontend Dependencies
 
 ```bash
 cd client
 npm install
 ```
 
-### Backend
+---
+
+## 3️⃣ Install Backend Dependencies
 
 ```bash
 cd server
@@ -255,86 +386,66 @@ npm run dev
 
 ---
 
-# 🧠 AI Workflow
+# 🔥 Real-World Problems Solved
 
-```text
-User Uploads Travel Documents
-            ↓
-File Processing & Extraction
-            ↓
-Gemini AI API Processing
-            ↓
-Structured Travel Itinerary Generation
-            ↓
-Store in MongoDB
-            ↓
-Display + Share + Download
-```
+During development and deployment, multiple production-level issues were solved:
 
----
-
-# 🔥 Challenges Faced & Solved
-
-During development and deployment, multiple real-world production issues were handled:
-
-- JWT authentication issues after deployment
-- Cookie handling across frontend/backend domains
-- CORS configuration problems
-- Protected route persistence
-- File upload handling
-- AI response formatting
-- MongoDB connection handling
-- Deployment environment configuration
-- Dynamic itinerary rendering
-
-This project helped strengthen:
-- Full-stack MERN development
-- Authentication systems
-- API architecture
-- AI integration workflows
-- Deployment/debugging skills
-- Production-level problem solving
+- ✅ JWT authentication persistence
+- ✅ Cookie handling across frontend/backend domains
+- ✅ CORS configuration handling
+- ✅ Protected route management
+- ✅ Cloudinary file upload handling
+- ✅ OCR text extraction formatting
+- ✅ Gemini AI response formatting
+- ✅ MongoDB connection management
+- ✅ Deployment environment configuration
+- ✅ Dynamic itinerary rendering
 
 ---
 
-# 📈 Key Learning Outcomes
+# 📚 Key Learnings
 
-- Building secure MERN applications
-- AI API integration
-- Cloudinary file management
-- Authentication & authorization
-- REST API architecture
-- Deployment workflows
-- State management
-- Real-world debugging
+- ✅ Full-stack MERN Development
+- ✅ AI API Integration
+- ✅ Authentication & Authorization
+- ✅ REST API Architecture
+- ✅ Cloudinary Integration
+- ✅ Production Deployment
+- ✅ MongoDB Optimization
+- ✅ Real-world Debugging
+- ✅ State Management
+- ✅ Secure Backend Architecture
 
 ---
 
 # 🎯 Assignment Requirements Covered
 
-✅ JWT Authentication  
-✅ Travel Document Upload  
-✅ AI Processing  
-✅ AI Itinerary Generation  
-✅ MongoDB Storage  
-✅ Trip History  
-✅ Share Functionality  
-✅ Responsive React Frontend  
-✅ Node + Express Backend  
-✅ Live Deployment  
+- ✅ JWT Authentication
+- ✅ Travel Document Upload
+- ✅ AI Processing
+- ✅ AI Itinerary Generation
+- ✅ MongoDB Storage
+- ✅ Trip History
+- ✅ Share Functionality
+- ✅ Responsive React Frontend
+- ✅ Node + Express Backend
+- ✅ Live Deployment
 
 ---
 
-# 🌟 Bonus Features Implemented
+# 🌟 Additional Improvements Implemented
 
-✅ PDF Download  
-✅ TXT Download  
-✅ Public Sharing  
-✅ Drag & Drop Upload UI  
-✅ Beautiful Responsive UI  
-✅ Cloudinary Uploads  
-✅ Persistent Login  
-✅ Protected Dashboard Routes  
+- ✅ PDF Download Feature
+- ✅ TXT Download Feature
+- ✅ Public Itinerary Sharing
+- ✅ Drag & Drop Upload UI
+- ✅ Responsive Dashboard UI
+- ✅ Cloudinary Integration
+- ✅ Persistent Login State
+- ✅ Optimized Rendering
+- ✅ React Lazy Loading
+- ✅ Compression Middleware
+- ✅ MongoDB Indexing
 
 ---
 
@@ -348,25 +459,33 @@ Full Stack Developer (MERN)
 
 # 📬 Contact
 
-📧 Email: preethampoojari146@gmail.com  
-💼 LinkedIn: https://www.linkedin.com/in/preethampoojari/
+📧 Email: preethampoojari146@gmail.com
+
+💼 LinkedIn:  
+https://www.linkedin.com/in/preethampoojari/
 
 ---
 
 # ⭐ Final Note
 
-This project was developed with focus on:
-- Clean architecture
+This project was built with focus on:
+
 - Real-world usability
 - Secure authentication
 - Scalable backend structure
-- AI-powered user experience
+- AI-powered automation
+- Clean architecture
 - Production deployment practices
+- Responsive user experience
 
-The goal was not just to complete the assignment, but to build a polished and functional product-oriented application.
+The goal was not just to complete the assignment, but to build a polished and production-oriented full-stack application.
 
 ---
 
-# ⭐ If you liked this project
+<div align="center">
+
+## ⭐ If you liked this project
 
 Give this repository a ⭐ on GitHub.
+
+</div>
