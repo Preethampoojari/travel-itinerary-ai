@@ -45,7 +45,6 @@ Notes: ${notes}
   `;
     }
 
-    // image handling later
     if (!extractedText.trim() && !destination) {
       return res.status(400).json({
         success: false,
