@@ -19,7 +19,7 @@ function Home() {
 
           <div className="mt-10 flex items-center justify-center gap-4 flex-wrap">
             <Link
-              to="/dashboard"
+              to={isAuthenticated ? "/dashboard" : "/login"}
               className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-semibold"
             >
               Get Started

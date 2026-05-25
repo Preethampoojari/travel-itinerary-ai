@@ -6,10 +6,20 @@ export const authenticate = async (req, res, next) => {
     const token = req.cookies.jwt;
 
     if (!token) {
-      return res.status(401).json({ message: "Unauthorized" });
+      return res.status(401).json({
+        message: "Unauthorized",
+      });
     }
 
-    const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    let decoded;
+
+    try {
+      decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
+    } catch (error) {
+      return res.status(401).json({
+        message: "Invalid token",
+      });
+    }
 
     const user = await User.findById(decoded.userId);
 
@@ -20,8 +30,11 @@ export const authenticate = async (req, res, next) => {
     }
 
     req.user = user;
+
     next();
   } catch (error) {
-    return res.status(401).json({ message: error.message });
+    return res.status(401).json({
+      message: error.message,
+    });
   }
 };

@@ -25,7 +25,7 @@ function Login() {
       });
 
       toast.success(data.message || "User loggedin successfully");
-      login();
+      login(data.user);
       navigateTo("/");
       setEmail("");
       setPassword("");

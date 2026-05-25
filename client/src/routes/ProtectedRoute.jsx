@@ -8,8 +8,8 @@ function ProtectedRoute({ children }) {
     return <h1>Loading...</h1>;
   }
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" />;
+  if (!loading && !isAuthenticated) {
+    return <Navigate to="/login" replace />;
   }
 
   return children;
